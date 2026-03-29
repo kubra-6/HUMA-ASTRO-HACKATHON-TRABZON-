@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zıplama Simülasyonu - Interaktif</title>
+    <style>
+        /* CSS BÖLÜMÜ */
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #1b0c33 0%, #050505 100%);
+            color: white;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* --- Geri Dön Butonu Stilleri --- */
+        .top-nav {
+            background: #000000;
+            padding: 10px 20px;
+            border-bottom: 1px solid #222;
+            z-index: 20;
+            text-align: left;
+        }
+
+        .back-home-btn {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-home-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #00ffcc; /* Oyundaki yeşilimsi renk ile uyumlu */
+            border-color: #00ffcc;
+            transform: translateX(-5px); /* Üzerine gelince hafif sola kayar */
+        }
+        /* Üst Kontrol Paneli */
+        .ui-header {
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 2px solid #333;
+            z-index: 10;
+        }
+
+        .control-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .control-item label {
+            display: block;
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .input-box {
+            background: #1a1a1a;
+            border: 1px solid #444;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            min-width: 60px;
+        }
+
+        input[type="number"] {
+            background: transparent;
+            border: none;
+            color: #00ffcc;
+            width: 50px;
+            text-align: center;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="range"] {
+            cursor: pointer;
+            accent-color: #e91e63;
+            width: 120px;
+        }
+
+        .value-text {
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #jumpBtn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        #jumpBtn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        #jumpBtn:active {
+            transform: translateY(0);
+        }
+
+        /* Simülasyon Alanı */
+        .simulation-space {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding-bottom: 80px;
+            position: relative;
+        }
+
+        .celestial-body {
+            text-align: center;
+            position: relative;
+            width: 300px;
+        }
+
+        .planet-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: inset -25px -25px 60px rgba(0,0,0,0.9);
+            background-size: cover;
+            background-position: center;
+        }
+
+    
+
+    .moon-img {
+        /* Yerel dosyanı buraya ekledik */
+        background-image: url('moon.jpg');
+        background-size: cover; /* Görselin daireyi tam doldurmasını sağlar */
+        background-position: center; /* Görseli ortalar */
+    }
+
+
+        .earth-img {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg');
+        }
+
+        .celestial-body p {
+            margin-top: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #aaa;
+        }
+
+        .astronaut {
+    width: 60px; 
+    height: 100px;
+    background: url('astronot3.png') no-repeat center;
+    background-size: contain;
+    position: absolute;
+    bottom: 240px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+    </style>
+</head>
+<body>
+    <body>
+    <div class="top-nav">
+        <a href="index.html#oyun-bolumu" class="back-home-btn">⬅ Ana Sayfaya Dön</a>
+    </div>
+    
+
+    <div class="ui-header">
+        <div class="control-item">
+            <label>KÜTLE (KG)</label>
+            <div class="input-box">
+                <input type="number" id="massInput" value="70" min="1" max="500">
+            </div>
+        </div>
+        
+        <div class="control-item">
+            <label>ZIPLAMA GÜCÜ (M)</label>
+            <input type="range" id="jumpRange" min="0.2" max="4" step="0.1" value="1">
+            <div id="rangeDisplay" class="value-text">1.0m</div>
+        </div>
+
+        <div class="control-item">
+            <label>DÜNYA AĞIRLIĞI</label>
+            <div id="earthWeight" class="value-text">70.0 kgf</div>
+        </div>
+
+        <div class="control-item">
+            <label>AY AĞIRLIĞI</label>
+            <div id="moonWeight" class="value-text">11.6 kgf</div>
+        </div>
+
+        <div class="control-item">
+            <label>ZIPLAMA (DÜNYA/AY)</label>
+            <div id="jumpRatio" class="value-text">1.0m / 6.0m</div>
+        </div>
+
+        <button id="jumpBtn">Zıplat!</button>
+    </div>
+
+    <div class="simulation-space">
+        <div class="celestial-body">
+            <div class="astronaut" id="moonAstronaut"></div>
+            <div class="planet-img moon-img"></div>
+            <p>AY</p>
+        </div>
+
+        <div class="celestial-body">
+            <div class="astronaut" id="earthAstronaut"></div>
+            <div class="planet-img earth-img"></div>
+            <p>DÜNYA</p>
+        </div>
+    </div>
+
+    <script>
+        /* JAVASCRIPT BÖLÜMÜ */
+        const massInput = document.getElementById('massInput');
+        const jumpRange = document.getElementById('jumpRange');
+        const rangeDisplay = document.getElementById('rangeDisplay');
+        const earthWeightDisp = document.getElementById('earthWeight');
+        const moonWeightDisp = document.getElementById('moonWeight');
+        const jumpRatioDisp = document.getElementById('jumpRatio');
+        const jumpBtn = document.getElementById('jumpBtn');
+
+        const earthAstronaut = document.getElementById('earthAstronaut');
+        const moonAstronaut = document.getElementById('moonAstronaut');
+
+        const BASE_BOTTOM = 240; // Gezegenin yüzeyi (piksel)
+
+        function updateSimulationData() {
+            const mass = parseFloat(massInput.value) || 0;
+            const jumpMeters = parseFloat(jumpRange.value);
+
+            // Ağırlık Hesaplama
+            const eWeight = mass.toFixed(1);
+            const mWeight = (mass * 0.165).toFixed(1);
+
+            // Arayüzü Güncelle
+            rangeDisplay.innerText = jumpMeters.toFixed(1) + "m";
+            earthWeightDisp.innerText = eWeight + " kgf";
+            moonWeightDisp.innerText = mWeight + " kgf";
+            
+            const moonJumpVal = (jumpMeters * 6.04).toFixed(1);
+            jumpRatioDisp.innerText = `${jumpMeters.toFixed(1)}m / ${moonJumpVal}m`;
+        }
+
+        function performJump() {
+            const jumpMeters = parseFloat(jumpRange.value);
+            
+            // Görselleştirme için ölçek: 1 metre = 50 piksel
+            const jumpPx = jumpMeters * 50;
+            const moonJumpPx = jumpPx * 6;
+
+            // Dünya Zıplaması (Hızlı)
+            animateJump(earthAstronaut, jumpPx, 450);
+
+            // Ay Zıplaması (Daha yüksek ve daha yavaş/akıcı)
+            animateJump(moonAstronaut, moonJumpPx, 1400);
+        }
+
+        function animateJump(element, height, duration) {
+            // Yükseliş
+            element.style.transition = `bottom ${duration}ms ease-out`;
+            element.style.bottom = (BASE_BOTTOM + height) + "px";
+
+            // İniş (Yükseliş bittikten sonra başlar)
+            setTimeout(() => {
+                element.style.transition = `bottom ${duration}ms ease-in`;
+                element.style.bottom = BASE_BOTTOM + "px";
+            }, duration);
+        }
+
+        // Dinleyiciler
+        massInput.addEventListener('input', updateSimulationData);
+        jumpRange.addEventListener('input', updateSimulationData);
+        jumpBtn.addEventListener('click', performJump);
+
+        // İlk açılışta verileri yükle
+        updateSimulationData();
+    </script>
+</body>
+</html>

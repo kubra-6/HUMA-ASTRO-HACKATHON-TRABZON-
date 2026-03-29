@@ -1,0 +1,745 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #000;
+    overflow-x: hidden;
+    color: white;
+}
+
+/* Slogan Tasarımı */
+.slogan-container {
+    position: absolute;
+    top: 6%;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.slogan-container h2 {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 300;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Yıldızların Konteyneri */
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* 3D Modelin Konteyneri */
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Ekranı İkiye Bölen Yapı */
+.split {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.split .content {
+    text-align: center;
+    pointer-events: auto;
+}
+
+/* Sol Taraf Mavi Yansıma */
+.left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 50, 150, 0.3), transparent);
+}
+
+/* Sağ Taraf Kırmızı Yansıma */
+.right {
+    right: 0;
+    background: linear-gradient(to left, rgba(150, 0, 0, 0.3), transparent);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    letter-spacing: 3px;
+}
+
+/* Buton Tasarımları */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.left .btn:hover {
+    background: rgba(0, 100, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 100, 255, 0.6);
+    border-color: rgba(0, 100, 255, 0.8);
+}
+
+.right .btn:hover {
+    background: rgba(255, 50, 50, 0.4);
+    box-shadow: 0 0 20px rgba(255, 50, 50, 0.6);
+    border-color: rgba(255, 50, 50, 0.8);
+}
+
+/* --- ALT SAYFA TASARIMLARI --- */
+.subpage {
+    overflow-y: auto;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.apollo-bg {
+    background: radial-gradient(circle at top, #001133, #000000);
+}
+
+.alternatif-bg {
+    background: radial-gradient(circle at top, #330000, #000000);
+}
+
+.content-container {
+    width: 80%;
+    max-width: 1000px;
+    position: relative;
+    z-index: 10;
+}
+
+.back-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 4rem;
+    margin-bottom: 40px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+}
+
+.text-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- YILDIZLAR VE KARTLAR --- */
+.css-stars {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #e0e0e0, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #cccccc, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 160px 120px, #dddddd, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    opacity: 0.6;
+}
+
+.info-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 100, 100, 0.2);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 100, 100, 0.15);
+}
+
+.card-content {
+    flex: 2;
+    padding: 30px;
+}
+
+.card-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffcccc;
+}
+
+.card-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+.card-image {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 100, 100, 0.2);
+    min-height: 250px;
+    color: rgba(255, 255, 255, 0.3);
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-image img {
+    max-width: 100%; 
+    max-height: 250px; 
+    height: auto;    
+    display: block;  
+    margin: 0 auto; 
+    border-radius: 10px; 
+    object-fit: contain; 
+}
+
+@media (max-width: 800px) {
+    .info-card {
+        flex-direction: column-reverse;
+    }
+    .card-image {
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 100, 100, 0.2);
+        min-height: 200px;
+    }
+}
+
+.apollo-bg .info-card {
+    border: 1px solid rgba(100, 150, 255, 0.2); 
+}
+
+.apollo-bg .info-card:hover {
+    box-shadow: 0 10px 25px rgba(100, 150, 255, 0.15);
+}
+
+.apollo-bg .card-content h2 {
+    color: #cce0ff;
+}
+
+.apollo-bg .card-image {
+    border-color: rgba(100, 150, 255, 0.2);
+}
+
+@media (max-width: 800px) {
+    .apollo-bg .card-image {
+        border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+        border-left: none;
+    }
+}
+
+html, .subpage {
+    scroll-behavior: smooth;
+}
+
+/* --- YAN MENÜ --- */
+.menu-btn {
+    position: fixed;
+    top: 30px;
+    left: 40px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 100;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s;
+    user-select: none;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 380px;
+    max-width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 15, 0.75); 
+    backdrop-filter: blur(15px); 
+    z-index: 200;
+    transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 80px 40px;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+    user-select: none;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+    color: #ffcccc;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+}
+
+.side-menu ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+    color: white;
+    transform: translateX(10px); 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.side-menu ul li a span {
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+/* --- ROKET ANİMASYONLARI --- */
+#launch-container {
+    width: 100%;
+    height: 220px; 
+    position: relative;
+    margin-bottom: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(0,20,50,0.5) 0%, rgba(0,0,0,0) 100%);
+    overflow: hidden; 
+}
+
+.path-line {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    right: 140px;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+    z-index: 1;
+}
+
+#rocket-launch {
+    width: 110px; 
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg); 
+    z-index: 3;
+    transition: left 4s ease-in-out; 
+    filter: drop-shadow(-5px 5px 10px rgba(255, 100, 0, 0.4)); 
+}
+
+#moon-launch {
+    width: 140px; 
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); 
+}
+
+#launch-btn {
+    position: absolute;
+    bottom: 15px;
+    z-index: 10;
+    padding: 10px 30px;
+}
+
+.launch-active {
+    left: calc(100% - 140px - 100px) !important; 
+}
+
+/* Başarısız Fırlatma Stilleri */
+#launch-container-fail {
+    width: 100%;
+    height: 220px; 
+    position: relative;
+    margin-bottom: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(80,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    overflow: hidden; 
+}
+
+#rocket-fail {
+    width: 110px; 
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg); 
+    z-index: 3;
+    transition: left 2s ease-in; 
+    filter: drop-shadow(-5px 5px 10px rgba(255, 100, 0, 0.4)); 
+}
+
+#moon-fail {
+    width: 140px; 
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); 
+}
+
+#launch-btn-fail {
+    position: absolute;
+    bottom: 15px;
+    z-index: 10;
+    padding: 10px 30px;
+}
+
+.launch-fail-active {
+    left: 45% !important; 
+}
+
+#explosion-effect {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 6rem;
+    z-index: 4;
+    opacity: 0;
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    filter: drop-shadow(0 0 20px rgba(255, 50, 0, 0.8));
+}
+
+#explosion-effect.boom {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+}
+
+#mission-text-fail {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #ff4d4d;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    z-index: 5;
+    transition: opacity 0.5s ease-in;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    pointer-events: none;
+}
+
+#mission-text-fail.show {
+    opacity: 1;
+}
+
+@media (max-width: 800px) {
+    #launch-container, #launch-container-fail { height: 160px; }
+    #rocket-launch, #rocket-fail { width: 70px; }
+    #moon-launch, #moon-fail { width: 90px; }
+    .path-line { right: 90px; }
+    .launch-active { left: calc(100% - 90px - 60px) !important; }
+    #mission-text-fail { font-size: 1.8rem; top: 15px; }
+}
+
+/* --- GİRİŞ EKRANI KAPSAYICISI --- */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+/* --- HAREKETLİ OKLAR --- */
+.scroll-ok {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 2.5rem;
+    text-decoration: none;
+    z-index: 100;
+    transition: color 0.3s ease;
+}
+
+.scroll-ok:hover {
+    color: #ffffff;
+}
+
+.asagi-ok {
+    bottom: 30px;
+    animation: zipla-asagi 2s infinite;
+}
+
+.yukari-ok {
+    top: 30px;
+    animation: zipla-yukari 2s infinite;
+}
+
+@keyframes zipla-asagi {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-15px) translateX(-50%); }
+    60% { transform: translateY(-7px) translateX(-50%); }
+}
+
+@keyframes zipla-yukari {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(15px) translateX(-50%); }
+    60% { transform: translateY(7px) translateX(-50%); }
+}
+
+/* --- OYUN BÖLÜMÜ --- */
+.oyun-alani {
+    width: 100%;
+    height: 100vh;
+    background-color: #02040a; 
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.oyun-icerik {
+    max-width: 800px;
+}
+
+.oyun-icerik h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    line-height: 1.4;
+}
+
+.oyun-icerik p {
+    color: #cccccc;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.oyun-basla-btn {
+    font-size: 1.3rem;
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.oyun-basla-btn:hover {
+    background-color: white;
+    color: #02040a; 
+    transform: scale(1.05);
+}
+
+/* --- YENİ EKLENEN QUIZ TASARIMI --- */
+.quiz-wrapper {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#start-quiz-btn {
+    background: rgba(0, 255, 204, 0.1);
+    border-color: rgba(0, 255, 204, 0.5);
+    color: #00ffcc;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+    cursor: pointer;
+}
+
+#start-quiz-btn:hover {
+    background: rgba(0, 255, 204, 0.3);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
+    transform: scale(1.05);
+}
+
+.quiz-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.quiz-question-block {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.quiz-question-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.quiz-question {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.quiz-options {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-option {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.quiz-option:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(10px);
+}
+
+/* Doğru Cevap Stili */
+.quiz-option.correct {
+    background: rgba(40, 167, 69, 0.8) !important;
+    border-color: #28a745 !important;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+}
+
+/* Yanlış Cevap Stili */
+.quiz-option.incorrect {
+    background: rgba(220, 53, 69, 0.8) !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
+}
+
+/* Seçim yapıldıktan sonra diğer şıkları kilitleme */
+.quiz-option.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* --- QUIZ SONUÇ EKRANI TASARIMI --- */
+.quiz-result {
+    display: none;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 25px;
+    border-radius: 15px;
+    animation: fadeIn 0.8s ease-in;
+    backdrop-filter: blur(5px);
+}
+
+.quiz-result.success {
+    background: rgba(40, 167, 69, 0.15);
+    border: 2px solid #28a745;
+    color: #4dd56b;
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);
+}
+
+.quiz-result.fail {
+    background: rgba(220, 53, 69, 0.15);
+    border: 2px solid #dc3545;
+    color: #ff6b7b;
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.3);
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo'nun Mirası</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .info-card .card-image {
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border: 2px solid rgba(255, 255, 255, 0.3); 
+            border-radius: 10px; 
+            box-sizing: border-box; 
+        }
+
+        .info-card .card-image .card-img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 8px; 
+        }
+    </style>
+</head>
+<body class="subpage apollo-bg">
+    
+    <div class="css-stars"></div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <ul>
+            <li><a href="#apollo11" onclick="toggleMenu()"><span>👨‍🚀</span> Apollo 11 Adımı</a></li>
+            <li><a href="#sessizlik" onclick="toggleMenu()"><span>🌑</span> Sessizlik Dönemi</a></li>
+            <li><a href="#ayap1" onclick="toggleMenu()"><span>🇹🇷</span> Türkiye / AYAP-1</a></li>
+            <li><a href="#ayap2" onclick="toggleMenu()"><span>🤖</span> Türk İmzası: AYAP-2</a></li>
+            <li><a href="#artemis" onclick="toggleMenu()"><span>🏗️</span> Artemis Programı</a></li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+        <a href="index.html" class="btn back-btn">⬅ Ana Sayfaya Dön</a>
+        
+        <div id="launch-container">
+            <div class="path-line"></div>
+            
+            <img src="roket.png.png" alt="Roket" id="rocket-launch">
+            <img src="ay_yeni.png" alt="Ay" id="moon-launch">
+            
+            <button id="launch-btn" class="btn">🚀 Fırlat!</button>
+        </div>
+        <h1 class="page-title">Apollo'nun Mirası ve Geleceğe Yolculuk</h1>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px; color: #ccc;">Geçmişin dev adımlarından, Türkiye'nin Ay vizyonuna ve insanlığın kalıcı yuvasına uzanan serüven...</p>
+        
+        <div class="info-card" id="apollo11">
+            <div class="card-content">
+                <h2>👨‍🚀 Apollo 11: İnsanlığın Dev Adımı</h2>
+                <p>1969 yılının Temmuz ayı, insanlık tarihinin en büyük sınırının aşıldığı an olarak kayıtlara geçti. Neil Armstrong’un Ay tozuna bıraktığı o ikonik bot izi, sadece bir fiziksel temas değil, imkansızın fethidir. "Bir insan için küçük, insanlık için dev bir adım" sözüyle perçinlenen bu görevde, ilk kez bir insan başka bir dünyadan Dünya’ya bakma şansı yakaladı. Armstrong ve Aldrin’in topladığı örnekler ve kurdukları deney düzenekleri, Ay biliminin temelini attı. O gün Ay, artık gökyüzünde bir süs değil, insanlığın ayak bastığı bir kıta haline geldi.</p>
+            </div>
+            <div class="card-image">
+                <img src="apollo1.png.jpeg" alt="Apollo 11 Astronotu" class="card-img">
+            </div>
+        </div>
+
+        <div class="info-card" id="sessizlik">
+            <div class="card-content">
+                <h2>🌑 Sessizlik Dönemi: Ay’ın Unutulan Yılları</h2>
+                <p>1972’deki son Apollo görevinden sonra, Ay yüzeyindeki insan izleri uzun bir sessizliğe terk edildi. Dünya’nın ilgisi daha yakın yörüngedeki uzay istasyonlarına ve diğer gezegenlere kaysa da, Ay aslında hiç unutulmadı. Bu süreçte yörüngede dönen insansız uydular, Ay’ın gizli kalmış karanlık yüzünü ve kutup bölgelerini santimetre hassasiyetinde haritalandırdı. Özellikle kutuplardaki derin kraterlerde buz halinde suyun bulunması, Ay’a dönüş heyecanını yeniden alevlendirdi. Bu sessiz yıllar, aslında bir sonraki büyük sıçrama için gereken stratejik hazırlık dönemiydi.</p>
+            </div>
+            <div class="card-image">
+                <img src="sessizlik.jpeg" alt="Ay Yüzeyinin Haritası" class="card-img">
+            </div>
+        </div>
+
+        <div class="info-card" id="ayap1">
+            <div class="card-content">
+                <h2>🇹🇷 Türkiye’nin Vizyonu: AYAP-1 ve İlk Temas</h2>
+                <p>Türkiye, Milli Uzay Programı ile Ay serüvenine kendi mühendislik gücüyle dahil oluyor. AYAP-1 (Ay Araştırma Programı-1), yerli imkanlarla geliştirilen hibrit roket motorumuzun derin uzaydaki en büyük sınavı olacaktır. Bu görevin temel amacı, uzay aracımızı Ay yörüngesine başarıyla yerleştirerek bayrağımızı gökyüzünde dalgalandırmaktır. Bu adım, Türkiye’nin uzay teknolojilerinde sadece bir kullanıcı değil, kendi motoruyla mesafe kat eden bir üretici olduğunu dünyaya ilan edecektir.</p>
+            </div>
+            <div class="card-image">
+                <img src="ayap1.jpeg" alt="TÜRKİYE Yazılı Türk Rover Aracı" class="card-img">
+            </div>
+        </div>
+
+        <div class="info-card" id="ayap2">
+            <div class="card-content">
+                <h2>🤖 Ay’a Türk İmzası: AYAP-2 ve Rover Macerası</h2>
+                <p>Serüvenin ikinci ve daha iddialı aşaması olan AYAP-2, bizi doğrudan Ay’ın tozlu yüzeyine indirmeyi hedefliyor. Bu görevde, tamamen yerli tasarım bir iniş platformu kullanarak Ay’ın zorlu yüzeyine "yumuşak iniş" gerçekleştirmeyi hedefliyoruz. İniş platformunun başarılı olması, Türkiye’nin karmaşık uzay navigasyonu ve itki sistemlerinde ulaştığı zirveyi temsil edecektir.</p>
+            </div>
+            <div class="card-image">
+                <img src="ayap2.jpeg" alt="AYAP-2 Rover Aracı" class="card-img">
+            </div>
+        </div>
+
+        <div class="info-card" id="artemis">
+            <div class="card-content">
+                <h2>🏗️ Artemis Programı: Ay’da Kalıcı Bir Yuva</h2>
+                <p>İnsanlık bugün Ay’a sadece "gitmek" için değil, orada "kalmak" için dönüyor. NASA liderliğindeki Artemis programı, Ay’ın güney kutbunda sürdürülebilir bir yaşam alanı kurmayı ve ilk kadın astronotu yüzeye indirmeyi planlıyor. Bu programla birlikte Ay, insanlığın Dünya dışındaki ilk gerçek yerleşkesi olma yolunda ilerliyor.</p>
+            </div>
+            <div class="card-image">
+                <img src="artemis.jpeg" alt="Artemis Ay Üssü" class="card-img">
+            </div>
+        </div>
+
+        <div class="quiz-wrapper">
+            <button id="start-quiz-btn" class="btn">🧠 Bilgini Test Et </button>
+            
+            <div id="quiz-container" class="quiz-container">
+                
+                <div class="quiz-question-block">
+                    <p class="quiz-question">1. Neil Armstrong’un Ay tozuna bıraktığı bot izi metinde neden "sadece fiziksel bir temas değil" olarak tanımlanmıştır?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">A) Ay'ın mülkiyetinin ABD'ye geçtiğini simgelediği için</li>
+                        <li class="quiz-option" data-correct="true" onclick="checkAnswer(this, true)">B) İnsanoğlunun imkansızı fethettiğinin somut bir kanıtı olduğu için</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">C) Ay'da rüzgar olmadığı için izin hiç silinmeyeceği anlaşıldığından</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">D) İz bırakmanın teknolojik bir zorunluluk olmasından</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question-block">
+                    <p class="quiz-question">2. 1972-2000 arasındaki "Sessizlik Dönemi"nde yapılan hangi teknik çalışma, Ay'a dönüş heyecanını başlatan "buz halinde su" keşfine zemin hazırlamıştır?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="true" onclick="checkAnswer(this, true)">A) Ay yörüngesindeki insansız uyduların santimetre hassasiyetindeki haritalandırması</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">B) Dünya'daki teleskopların merceklerinin büyütülmesi</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">C) Ay'a gönderilen gizli insanlı görevlerin raporları</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">D) Diğer gezegenlere giden araçların Ay'ın yanından geçerken çektiği fotoğraflar</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question-block">
+                    <p class="quiz-question">3. Türkiye'nin Milli Uzay Programı'ndaki AYAP-1 ve AYAP-2 görevleri arasındaki en temel stratejik fark nedir?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">A) AYAP-1 insanlıyken, AYAP-2 insansız bir görevdir.</li>
+                        <li class="quiz-option" data-correct="true" onclick="checkAnswer(this, true)">B) AYAP-1 sadece yörüngeye yerleşmeyi, AYAP-2 ise Ay yüzeyine yerli platformla "yumuşak iniş" yapmayı hedefler.</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">C) AYAP-1 Mars'a, AYAP-2 ise Ay'a odaklanmıştır.</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">D) AYAP-1 yabancı motorla, AYAP-2 ise tamamen yerli motorla icra edilecektir.</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question-block">
+                    <p class="quiz-question">4. NASA liderliğindeki Artemis Programı'nı geçmişteki Apollo görevlerinden ayıran ana felsefe aşağıdakilerden hangisidir?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">A) Ay'a sadece bayrak dikip geri dönmek</li>
+                        <li class="quiz-option" data-correct="true" onclick="checkAnswer(this, true)">B) Ay'ın güney kutbunda sürdürülebilir bir yaşam alanı kurarak orada "kalıcı" olmak</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">C) Ay'daki tüm kraterlere isim vermek</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">D) Sadece kadın astronotların katılabileceği bir program olması</li>
+                    </ul>
+                </div>
+
+                <div id="quiz-result" class="quiz-result"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sideMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.getElementById('launch-btn').addEventListener('click', function() {
+            const rocket = document.getElementById('rocket-launch');
+            this.disabled = true; 
+            this.innerText = "🚀 Yolculuk Başladı...";
+            this.style.opacity = "0.5";
+            rocket.classList.add('launch-active');
+            
+            setTimeout(() => {
+                this.innerText = "👨‍🚀 Görev Başarılı!";
+                this.style.opacity = "1";
+            }, 4000); 
+        });
+
+        // --- QUIZ PUANLAMA MANTIĞI ---
+        let correctAnswers = 0;
+        let answeredQuestions = 0;
+        const totalQuestions = 4;
+
+        document.getElementById('start-quiz-btn').addEventListener('click', function() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.style.display = 'block';
+            quizContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            this.style.display = 'none'; 
+        });
+
+        function checkAnswer(element, isCorrect) {
+            const ul = element.parentElement;
+            const options = ul.querySelectorAll('.quiz-option');
+            
+            // Tüm şıkları kilitle
+            options.forEach(opt => opt.classList.add('disabled'));
+            
+            // Cevaplanan soru sayısını artır
+            answeredQuestions++;
+
+            if (isCorrect) {
+                element.classList.add('correct');
+                correctAnswers++; // Doğru sayısını artır
+            } else {
+                element.classList.add('incorrect');
+                options.forEach(opt => {
+                    if (opt.dataset.correct === "true") {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+
+            // Eğer tüm sorular cevaplandıysa sonucu hesapla
+            if (answeredQuestions === totalQuestions) {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const resultDiv = document.getElementById('quiz-result');
+            const successRate = (correctAnswers / totalQuestions) * 100;
+
+            resultDiv.style.display = 'block';
+
+            if (successRate > 50) {
+                resultDiv.innerHTML = `Tebrikler! Başarı oranınız: %${successRate} <br><br> 🚀 <strong>Astronot adayısınız!</strong>`;
+                resultDiv.className = 'quiz-result success';
+            } else {
+                resultDiv.innerHTML = `Maalesef... Başarı oranınız: %${successRate} <br><br> ❌ <strong>Başarısız oldunuz.</strong>`;
+                resultDiv.className = 'quiz-result fail';
+            }
+        }
+    </script>
+
+</body>
+</html>

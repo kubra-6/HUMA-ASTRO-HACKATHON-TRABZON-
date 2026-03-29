@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternatif Dünya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage alternatif-bg">
+    
+    <div class="css-stars"></div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <ul>
+            <li><a href="#visco" onclick="toggleMenu()"><span>🧊</span> Donmuş Savaş</a></li>
+            <li><a href="#mouse" onclick="toggleMenu()"><span>💾</span> Dijital Rötar</a></li>
+            <li><a href="#dedektor" onclick="toggleMenu()"><span>🎓</span> Akademik Boşluk</a></li>
+            <li><a href="#mama" onclick="toggleMenu()"><span>🎬</span> Sessiz Sinema</a></li>
+            <li><a href="#gozluk" onclick="toggleMenu()"><span>🚪</span> Mühürlü Kapı</a></li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+        <a href="index.html" class="btn back-btn">⬅ Ana Sayfaya Dön</a>
+        
+        <div id="launch-container-fail">
+            <div class="path-line"></div>
+            
+            <img src="roket.png.png" alt="Roket" id="rocket-fail">
+            <img src="ay_yeni.png" alt="Ay" id="moon-fail">
+            
+            <div id="explosion-effect">💥</div>
+            <div id="mission-text-fail">Görev Başarısız</div>
+            
+            <button id="launch-btn-fail" class="btn">🚀 Fırlat!</button>
+        </div>
+        
+        <h1 class="page-title">Alternatif Dünya: Ya Hiç Gitmeseydik?</h1>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px; color: #ccc;">Ay'a gitme vizyonu olmasaydı, bugün hayatımızın merkezinde olan pek çok teknolojiden mahrum kalacaktık...</p>
+        
+        <div class="info-card" id="visco">
+            <div class="card-content">
+                <h2>🧊Donmuş Savaş</h2>
+                <p>Ay yarışı bir sonuca bağlanmasaydı, Soğuk Savaş’ın o gergin atmosferi asla yumuşamazdı. ABD ve Sovyetler Birliği, teknolojik üstünlüğü kanıtlayacak "nihai bir zafer" kazanamadığı için askeri harcamalar katlanarak artmaya devam ederdi. Bu durum, dünya siyasetini bugün bile iki kutuplu, sert sınırlara sahip ve her an çatışmaya hazır bir gerilim hattında tutabilirdi.</p>
+            </div>
+            <div class="card-image">
+                <img src="donmuş.jpeg" alt="Ay Yüzeyinin Haritası" class="card-img">
+            </div>
+        </div>
+
+        <div class="info-card" id="mouse">
+            <div class="card-content">
+                <h2>💾Dijital Rötar</h2>
+                <p>Eğer 1969’da o efsanevi adım atılmasaydı, bugün içinde yaşadığımız modern dünya tam anlamıyla bir "teknolojik rötar" yaşıyor olurdu. Ay kapsülüne sığması gereken devasa bilgisayarları küçültme zorunluluğu doğmayacağı için mikroçip devrimi on yıllarca gecikir, cebimizdeki akıllı telefonlar yerine oda büyüklüğünde hantal makinelere mahkûm kalırdık. Astronotların uzay yürüyüşü için hayati olan kablosuz iletişim ve dayanıklı batarya ihtiyacı karşılanmasaydı; Wi-Fi, Bluetooth ve şarjlı ev aletleri gibi gündelik konforlar hayatımıza hiç girmeyebilirdi. Ay yüzeyini haritalamak için geliştirilen dijital sinyal işleme teknolojisi eksik kalsaydı, bugün tıpta hayat kurtaran MRI ve tomografi cihazları bu kadar hassas olamaz, sağlığımız gökyüzüne bakmadığımız için yeryüzünde karanlıkta kalırdı.</p>
+            </div>
+            <div class="card-image">
+                <img src="gerileme.jpeg" alt="Ay Yüzeyinin Haritası" class="card-img">
+            </div>
+        </div>
+
+        <div class="info-card" id="dedektor">
+            <div class="card-content">
+                <h2>🎓Akademik Boşluk</h2>
+                <p>Ay’a gitmek, binlerce imkansız denklemi sıfırdan çözmek demekti; NASA’nın bu hesaplamaları yapacak devasa bir beyin gücüne ihtiyaç duyması, dünyadaki fen ve matematik eğitiminde (STEM) ani bir devrim yarattı. Eğer o büyük "başarı mucizesi" yaşanmasaydı, okullardaki müfredatlar bu kadar bilim odaklı gelişmez ve milyonlarca genç mühendislik yerine daha sıradan alanlara yönelirdi. Üniversiteler uzay araştırmalarının getirdiği devasa Ar-Ge fonlarından mahrum kalır, bugün tıp ve yapay zekada devrim yaratan dahi beyinler ilham alacakları bir hedef bulamazdı. Sonuçta; Ay yolculuğu olmasaydı, modern bilim dünyası sınırlarını zorlamak yerine yerinde sayan, statik bir yapıda hapsolurdu.</p>
+            </div>
+            <div class="card-image">
+                <img src="akademik.jpeg" alt="Ay Yüzeyinin Haritası" class="card-img">
+            </div>
+        </div>
+
+        <div class="info-card" id="mama">
+            <div class="card-content">
+                <h2>🎬Sessiz Sinema</h2>
+                <p>Bilim kurgu edebiyatı ve sineması, Ay’a gidişin verdiği o muazzam ilham sayesinde altın çağını yaşadı ve hayal gücümüzü tetikledi. Eğer insanlı bir başarı hikayesi olmasaydı, bu türdeki eserler hep bir "imkansızlık" ve karamsarlık teması etrafında dönerdi. Uzay, keşfedilecek bir macera alanı değil, sadece korkulacak ve ulaşılamayacak bir karanlık olarak tasvir edilirdi. Bugün hayranlıkla izlediğimiz pek çok kült film ve okuduğumuz romanlar, o gerçek kanıtın eksikliğinde muhtemelen hiç yazılmayacaktı. Geleceğe dair umutlu hayaller kurmak yerine, hep kendi yerçekimimize hapsolmuş hikayeler anlatırdık.</p>
+            </div>
+            <div class="card-image">
+                <img src="sinema.jpeg" alt="Ay Yüzeyinin Haritası" class="card-img">
+            </div>
+        </div>
+
+        <div class="info-card" id="gozluk">
+            <div class="card-content">
+                <h2>🚪Mühürlü Kapı</h2>
+                <p>Ay bizim için derin uzaya açılan tek gerçek kapı ve bir nevi acemilik dönemimizin en büyük sınavıydı. Eğer bu basamağı çıkmasaydık, bugün Mars’a gitmeyi veya başka gezegenlerde yaşam kurmayı hayal bile edemez, sadece filmlerde izlerdik. Ay’da elde ettiğimiz tecrübeler, insanlı uzay uçuşlarının güvenli limanı ve en büyük laboratuvarı oldu. Oraya gitmemeyi seçmek, aslında yıldızlara giden yolu en başından mühürlemek ve evrenin geri kalanına sırtımızı dönmek demekti. Kendi uydusuna ulaşamayan bir türün, galaksiye dair tüm hayalleri sadece çocuk masalları olarak kalırdı.</p>
+            </div>
+            <div class="card-image">
+                <img src="mühürlü-kapı.jpeg" alt="Ay Yüzeyinin Haritası" class="card-img">
+            </div>
+        </div>
+
+        <div class="quiz-wrapper">
+            <button id="start-quiz-btn" class="btn">🧠 Bilgini Test Et </button>
+            
+            <div id="quiz-container" class="quiz-container">
+                
+                <div class="quiz-question-block">
+                    <p class="quiz-question">1. "Donmuş Savaş" senaryosuna göre, Ay yarışı bir "nihai zaferle" sonuçlanmasaydı dünya siyaseti bugün nasıl bir durumda olurdu?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">A) Ülkeler arasındaki tüm sınırlar kalkardı.</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">B) Askeri harcamalar azalır, bütçe eğitime aktarılırdı.</li>
+                        <li class="quiz-option" data-correct="true" onclick="checkAnswer(this, true)">C) İki kutuplu, sert sınırlara sahip ve her an çatışmaya hazır bir gerilim hattında kalırdı.</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">D) Uzay araştırmaları tamamen yasaklanırdı.</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question-block">
+                    <p class="quiz-question">2. "Dijital Rötar" bölümünde bahsedilen; Wi-Fi, Bluetooth ve şarjlı ev aletleri gibi konforlarımızı borçlu olduğumuz asıl ihtiyaç nedir?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="true" onclick="checkAnswer(this, true)">A) Astronotların uzay yürüyüşü için gereken kablosuz iletişim ve dayanıklı batarya ihtiyacı</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">B) Ay'daki yerçekiminin dünyaya göre daha az olması</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">C) Roketlerin daha hızlı gitmesi için gereken yakıt türü</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">D) Uzay araçlarının içindeki aydınlatma sistemleri</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question-block">
+                    <p class="quiz-question">3. "Akademik Boşluk" başlığına göre, Ay yolculuğu gerçekleşmeseydi milyonlarca genç mühendisin kariyer yolculuğu nasıl değişirdi?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">A) Sanat ve edebiyat alanında dünya markası olurlardı.</li>
+                        <li class="quiz-option" data-correct="true" onclick="checkAnswer(this, true)">B) Uzay projeleri olmadığı için daha sıradan alanlara yönelir, dahi beyinler ilham alacak hedef bulamazdı.</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">C) Kendi teknoloji şirketlerini kurup interneti daha erken keşfederlerdi.</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">D) Tıp fakültelerine yönelerek kansere çözüm bulurlardı.</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question-block">
+                    <p class="quiz-question">4. "Mühürlü Kapı" analojisinde kullanılan "kendi uydusuna ulaşamayan bir tür" ifadesiyle anlatılmak istenen asıl risk nedir?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">A) Ay'ın Dünya'dan uzaklaşacak olması</li>
+                        <li class="quiz-option" data-correct="true" onclick="checkAnswer(this, true)">B) Mars'a gitme veya galakside yaşam kurma hayallerinin sadece birer "çocuk masalı" olarak kalması</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">C) Ay'daki madenlerin başka türler tarafından ele geçirilmesi</li>
+                        <li class="quiz-option" data-correct="false" onclick="checkAnswer(this, false)">D) Dünya üzerindeki doğal kaynakların daha hızlı tükenmesi</li>
+                    </ul>
+                </div>
+
+                <div id="quiz-result" class="quiz-result"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sideMenu');
+            menu.classList.toggle('active');
+        }
+    
+        document.getElementById('launch-btn-fail').addEventListener('click', function() {
+            const rocket = document.getElementById('rocket-fail');
+            const explosion = document.getElementById('explosion-effect');
+            const failText = document.getElementById('mission-text-fail');
+            
+            this.disabled = true; 
+            this.innerText = "🚀 Fırlatıldı...";
+            this.style.opacity = "0.5";
+            
+            rocket.classList.add('launch-fail-active');
+            
+            setTimeout(() => {
+                rocket.style.display = 'none'; 
+                explosion.classList.add('boom'); 
+                failText.classList.add('show'); 
+                this.innerText = "❌ Görev Başarısız"; 
+            }, 2000); 
+        });
+
+        // --- QUIZ PUANLAMA MANTIĞI ---
+        let correctAnswers = 0;
+        let answeredQuestions = 0;
+        const totalQuestions = 4;
+
+        document.getElementById('start-quiz-btn').addEventListener('click', function() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.style.display = 'block';
+            quizContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            this.style.display = 'none'; 
+        });
+
+        function checkAnswer(element, isCorrect) {
+            const ul = element.parentElement;
+            const options = ul.querySelectorAll('.quiz-option');
+            
+            options.forEach(opt => opt.classList.add('disabled'));
+            
+            answeredQuestions++;
+
+            if (isCorrect) {
+                element.classList.add('correct');
+                correctAnswers++;
+            } else {
+                element.classList.add('incorrect');
+                options.forEach(opt => {
+                    if (opt.dataset.correct === "true") {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+
+            if (answeredQuestions === totalQuestions) {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const resultDiv = document.getElementById('quiz-result');
+            const successRate = (correctAnswers / totalQuestions) * 100;
+
+            resultDiv.style.display = 'block';
+
+            if (successRate > 50) {
+                resultDiv.innerHTML = `Tebrikler! Başarı oranınız: %${successRate} <br><br> 🚀 <strong>Astronot adayısınız!</strong>`;
+                resultDiv.className = 'quiz-result success';
+            } else {
+                resultDiv.innerHTML = `Maalesef... Başarı oranınız: %${successRate} <br><br> ❌ <strong>Başarısız oldunuz.</strong>`;
+                resultDiv.className = 'quiz-result fail';
+            }
+        }
+    </script>
+</body>
+</html>
